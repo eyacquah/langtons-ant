@@ -1,13 +1,14 @@
+const numCyclesEl = document.getElementById("numberOfCycles");
+const btnContainer = document.querySelector(".btn-container");
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-
-const numCyclesEl = document.getElementById("numberOfCycles");
 
 // Initial Params
 let antDir = "up";
 const coords = [canvas.width / 2 - 10, canvas.height / 2 - 10];
 
-// Storage for a cell's status
+// Store coordinates' state
 let filled = {};
 filled[`${coords[0]},${coords[1]}`] = false;
 
@@ -103,8 +104,7 @@ const run = () => {
   moveAnt(+numCyclesEl.value);
 };
 
-const btnContainer = document.querySelector(".btn-container");
-
+// Event Delegation
 btnContainer.addEventListener("click", (e) => {
   e.target.classList.contains("run") ? run() : clear();
 });
