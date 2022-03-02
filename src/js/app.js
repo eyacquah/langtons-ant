@@ -95,12 +95,13 @@ const setInitialParams = () => {
   antDir = "up";
 };
 
+const clear = () => ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 const run = () => {
+  clear();
   setInitialParams();
   moveAnt(+numCyclesEl.value);
 };
-
-const clear = () => ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 const btnContainer = document.querySelector(".btn-container");
 
